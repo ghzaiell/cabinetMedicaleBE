@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,10 +18,13 @@ import lombok.Setter;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String  name;
     @OneToOne
     private PatientRecord patientRecord;
+
+    @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)
+    private List<FutureAppointment> futureAppointments ;
 
 
 
