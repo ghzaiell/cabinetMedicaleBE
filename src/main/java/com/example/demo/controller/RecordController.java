@@ -1,9 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.PatientRecordService;
+
 import com.example.demo.service.PatientService;
+
 import com.example.demo.entities.Patient;
 import com.example.demo.entities.PatientRecord;
+
+import com.example.demo.service.PatientService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
