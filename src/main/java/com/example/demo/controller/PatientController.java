@@ -1,13 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.Service.PatientService;
+import com.example.demo.service.PatientService;
 import com.example.demo.entities.FutureAppointment;
 import com.example.demo.entities.Patient;
 import lombok.AllArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

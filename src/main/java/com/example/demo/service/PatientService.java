@@ -1,12 +1,11 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
-import com.example.demo.Repository.PatientRepository;
+import com.example.demo.repository.PatientRepository;
 import com.example.demo.entities.FutureAppointment;
 import com.example.demo.entities.Patient;
 import com.example.demo.entities.PatientRecord;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.servlet.View;
 
 import java.util.Collections;
 import java.util.List;
