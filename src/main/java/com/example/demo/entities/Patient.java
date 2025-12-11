@@ -20,7 +20,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String  name;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PatientRecord patientRecord;
 
     @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)

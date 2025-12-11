@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,8 +36,7 @@ public class PatientRecord {
     private List<String> chronicDiseases ;
     @Column(columnDefinition="text[]")
     private List<String> notes ;
-
-
+    @JsonIgnore
     @OneToOne
     private Patient patient ;
     @OneToMany(mappedBy = "patientRecord",cascade = CascadeType.ALL)
