@@ -19,7 +19,7 @@ import java.util.Date;
 public class FutureAppointment {
 
     @Id
-    private int id;
+    private Integer id;
     private Date date;
     @ManyToOne
     @JoinColumn(name = "patient_id")

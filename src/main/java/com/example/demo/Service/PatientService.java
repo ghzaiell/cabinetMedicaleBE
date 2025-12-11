@@ -16,7 +16,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class PatientService {
 
-    private final View error;
+
     private PatientRepository patientRepository;
 
     public Patient createPatient(Patient patient) {
@@ -35,6 +35,8 @@ public class PatientService {
    public Optional<Patient> findById(int id) {
        return patientRepository.findById(id);
    }
+
+   public Optional<Patient> findByName(String name) {return  this.patientRepository.findByName(name);}
 
    public List<FutureAppointment> getFutureAppointments(int id) {
        return patientRepository.findById(id).map(Patient::getFutureAppointments).orElse(Collections.emptyList());
