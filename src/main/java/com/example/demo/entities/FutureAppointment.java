@@ -1,32 +1,28 @@
 package com.example.demo.entities;
 
-
-import com.fasterxml.jackson.annotation.JsonTypeId;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Patient {
+public class FutureAppointment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String  name;
-    @OneToOne
-    private PatientRecord patientRecord;
-
-    @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)
-    private List<FutureAppointment> futureAppointments ;
-
-
-
+    private Date date;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 
 }

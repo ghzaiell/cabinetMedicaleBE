@@ -15,11 +15,11 @@ import java.util.List;
 public class PatientRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id ;
+    private Integer id ;
     private String height ;
     private String weight ;
     private String gender ;
-    private int age ;
+    private Integer age ;
 
     private Boolean smoking ;
     private Boolean Drinking ;

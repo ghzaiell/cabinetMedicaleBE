@@ -14,5 +14,4 @@ public interface  DocteurRepository extends JpaRepository<Docteur, Integer> {
 
 
 
-
 }

@@ -13,7 +13,7 @@ import lombok.Setter;
 public class AiSuggesionQuestions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private  String  question;
     private  String  answer;
     @ManyToOne

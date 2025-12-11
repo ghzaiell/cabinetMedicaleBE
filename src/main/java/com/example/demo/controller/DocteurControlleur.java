@@ -1,4 +1,4 @@
-package com.example.demo.controlleur;
+package com.example.demo.controller;
 
 import com.example.demo.Repository.DocteurRepository;
 import com.example.demo.entities.Docteur;
@@ -57,3 +57,4 @@ public class DocteurControlleur {
 
 
 }
+
