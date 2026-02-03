@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entities.FutureAppointment;
 import com.example.demo.service.FutureAppointmentService;
 import com.example.demo.service.PatientService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/appointment")
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class FutureAppointmentController {
     private final FutureAppointmentService futureAppointmentService;
     private final PatientService patientService;

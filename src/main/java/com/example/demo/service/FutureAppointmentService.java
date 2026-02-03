@@ -36,6 +36,8 @@ public class FutureAppointmentService {
         // 3 — Save it
         return futureAppointmentRepository.save(appointment);
     }
+
+
     public FutureAppointment updateFutureAppointment(FutureAppointment futureAppointment , Integer appointmentId) {
         FutureAppointment appointment = futureAppointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new RuntimeException("FutureAppointment not found with id: " + appointmentId));
@@ -46,6 +48,8 @@ public class FutureAppointmentService {
         return futureAppointmentRepository.save(appointment);
 
     }
+
+
     public FutureAppointment deleteFutureAppointment(Integer appointmentId) {
         FutureAppointment appointment = futureAppointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new RuntimeException("FutureAppointment not found with id: " + appointmentId));

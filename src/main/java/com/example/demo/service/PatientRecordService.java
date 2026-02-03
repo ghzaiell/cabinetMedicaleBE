@@ -130,5 +130,14 @@ public class PatientRecordService {
         return existingRecord;
     }
 
+    public PatientRecord getPatientRecord(Integer patientId) throws Exception {
+        Patient patient = patientRepository.findById(patientId)
+                .orElseThrow(() -> new EntityNotFoundException("Patient not found"));
+
+        if (patient.getPatientRecord() == null) {
+            throw new Exception("Patient has no medical record");
+        }
+        return patient.getPatientRecord();
+    }
 
 }

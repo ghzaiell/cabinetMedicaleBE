@@ -6,22 +6,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AiSuggesionQuestions {
+public class AiDetector {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private  String  question;
-    private  String  answer;
+    Integer id;
+    String warning;
+    String AiAnalyse;
+    String level ;
     @JsonIgnore
-    @ManyToOne
-    private Appointment appointment;
-
-    public String toString() {
-        return "( question=" + question + " answer=" + answer +" ) ";
-    }
+    @OneToOne
+    Appointment appointment;
 }

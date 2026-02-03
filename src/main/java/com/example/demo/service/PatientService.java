@@ -7,6 +7,7 @@ import com.example.demo.entities.PatientRecord;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -23,6 +24,9 @@ public class PatientService {
                 .ifPresent(existingPatient -> {
                     throw new RuntimeException("Patient with this name already exists");
                 });
+        PatientRecord record = new PatientRecord();
+        patient.setPatientRecord(record);
+
         return patientRepository.save(patient);
     }
 
