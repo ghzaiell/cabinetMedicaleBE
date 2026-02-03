@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Repository.PatientRepository;
+import com.example.demo.repository.PatientRepository;
 import com.example.demo.entities.Patient;
 import com.example.demo.entities.PatientRecord;
 import jakarta.persistence.EntityNotFoundException;
@@ -130,5 +130,14 @@ public class PatientRecordService {
         return existingRecord;
     }
 
+    public PatientRecord getPatientRecord(Integer patientId) throws Exception {
+        Patient patient = patientRepository.findById(patientId)
+                .orElseThrow(() -> new EntityNotFoundException("Patient not found"));
+
+        if (patient.getPatientRecord() == null) {
+            throw new Exception("Patient has no medical record");
+        }
+        return patient.getPatientRecord();
+    }
 
 }

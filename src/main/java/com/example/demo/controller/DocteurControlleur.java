@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.Repository.DocteurRepository;
+import com.example.demo.repository.DocteurRepository;
 import com.example.demo.entities.Docteur;
 import com.example.demo.service.DocteurService;
 import org.springframework.http.ResponseEntity;

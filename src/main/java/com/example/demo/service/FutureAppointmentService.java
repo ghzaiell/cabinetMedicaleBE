@@ -1,8 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.Repository.FutureAppointmentRepository;
-import com.example.demo.Repository.PatientRepository;
+import com.example.demo.repository.FutureAppointmentRepository;
+import com.example.demo.repository.PatientRepository;
 import com.example.demo.entities.Patient;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import com.example.demo.entities.FutureAppointment;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class FutureAppointmentService {
     private final FutureAppointmentRepository futureAppointmentRepository;
     private final PatientRepository patientRepository;
@@ -35,6 +36,8 @@ public class FutureAppointmentService {
         // 3 — Save it
         return futureAppointmentRepository.save(appointment);
     }
+
+
     public FutureAppointment updateFutureAppointment(FutureAppointment futureAppointment , Integer appointmentId) {
         FutureAppointment appointment = futureAppointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new RuntimeException("FutureAppointment not found with id: " + appointmentId));
@@ -45,6 +48,8 @@ public class FutureAppointmentService {
         return futureAppointmentRepository.save(appointment);
 
     }
+
+
     public FutureAppointment deleteFutureAppointment(Integer appointmentId) {
         FutureAppointment appointment = futureAppointmentRepository.findById(appointmentId)
                 .orElseThrow(() -> new RuntimeException("FutureAppointment not found with id: " + appointmentId));

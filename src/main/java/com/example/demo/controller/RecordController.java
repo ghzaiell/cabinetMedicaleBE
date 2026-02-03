@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.service.PatientRecordService;
 
+import com.example.demo.service.PatientService;
+
 import com.example.demo.entities.Patient;
 import com.example.demo.entities.PatientRecord;
 
